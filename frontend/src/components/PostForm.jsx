@@ -88,9 +88,9 @@ const PostForm = () => {
   }
 
   return (
-    <div className='post-wrap'>
+    <div className='wrap'>
       <h2>Posts</h2>
-      <div className="post-controls">
+      <div className="controls">
         <input
           value={title}
           onChange={(e) => setTitle(e.target.value)}
@@ -101,7 +101,7 @@ const PostForm = () => {
           onChange={(e) => setContent(e.target.value)}
           placeholder='내용을 입력하세요'
           rows={3}></textarea>
-        <div className="post-buttons">
+        <div className="buttons">
           <button className="btn" onClick={onCreate} disabled={loading}>등록</button>
           <button className="btn refresh" disabled={loading}>새로고침</button>
         </div>
@@ -109,7 +109,7 @@ const PostForm = () => {
 
       {loading && <p>불러오는 중....</p>}
       {err && <p>{err}</p>}
-      <ul className='post-list'>
+      <ul className='list'>
         {posts.map((post) => (
           <li key={post._id}>
             <h4>
